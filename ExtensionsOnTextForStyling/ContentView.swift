@@ -10,7 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Hello, World!")
+                .style()
+            Text("Hello, SwiftUI!")
+                .style(.largeTitle, fontWeight: .heavy, color: .blue)
+        }
+    }
+}
+
+extension Text {
+    func style(_ font: Font = .body, fontWeight: Font.Weight = .heavy, color: Color = .black) -> Text {
+        return self
+            .font(font)
+            .fontWeight(fontWeight)
+            .foregroundColor(color)
     }
 }
 
